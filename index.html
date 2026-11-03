@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>BluLex. — Beginner Content-Clipping Ebooks by Om Dhas</title>
+  <meta name="description" content="Simple guides for beginners who want to start earning online with content clipping. Written by someone who is doing it.">
+
+  <!-- Google Fonts: Bricolage Grotesque (800), Figtree (400, 500, 600, 700), JetBrains Mono (400, 600, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Theme Definitions */
+    :root {
+      --font-heading: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Light Mode Palette */
+      --color-primary-blue: #1F4BFF;
+      --color-accent-magenta: #E0219A;
+      --color-bg: #FFFFFF;
+      --color-text-navy: #0A1646;
+      --color-text-muted: #4B5578;
+      --color-surface-tint: #F1F5FF;
+      --color-surface-card: #FFFFFF;
+      --color-border: rgba(31, 75, 255, 0.12);
+      --color-border-card: rgba(10, 22, 70, 0.08);
+      --color-nav-bg: rgba(255, 255, 255, 0.88);
+      
+      --gradient-brand: linear-gradient(135deg, #1F4BFF 0%, #8736E0 50%, #E0219A 100%);
+      --gradient-subtle: linear-gradient(180deg, rgba(241, 245, 255, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
+      
+      --shadow-soft: 0 10px 30px -10px rgba(31, 75, 255, 0.15);
+      --shadow-card: 0 16px 40px -12px rgba(10, 22, 70, 0.08);
+      --shadow-fan: 0 20px 40px -15px rgba(31, 75, 255, 0.28);
+    }
+
+    html.dark {
+      /* Dark Mode Palette */
+      --color-primary-blue: #5F81FF;
+      --color-accent-magenta: #FF4CBF;
+      --color-bg: #060C26;
+      --color-text-navy: #F0F4FF;
+      --color-text-muted: #9BB0E0;
+      --color-surface-tint: #0B1640;
+      --color-surface-card: #0E1B4D;
+      --color-border: rgba(95, 129, 255, 0.22);
+      --color-border-card: rgba(95, 129, 255, 0.15);
+      --color-nav-bg: rgba(6, 12, 38, 0.90);
+      
+      --gradient-brand: linear-gradient(135deg, #5F81FF 0%, #B847EB 50%, #FF4CBF 100%);
+      --gradient-subtle: linear-gradient(180deg, rgba(11, 22, 64, 0.7) 0%, rgba(6, 12, 38, 1) 100%);
+      
+      --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+      --shadow-card: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
+      --shadow-fan: 0 20px 45px -12px rgba(95, 129, 255, 0.35);
+    }
+
+    /* Base Reset & Typography */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, 
+        /* 1. SKY (Top: Header & Hero) */
+        #0284C7 0%,          /* Radiant Sky Blue at top navigation */
+        #0EA5E9 8%,          /* Vivid Sky Azure across Hero */
+        #38BDF8 17%,         /* Open bright sky behind reels & BLULEX */
+        #0284C7 25%,         /* Sky horizon entering catalog */
+        
+        /* 2. BLUE (Middle: Guides Catalog & Proof) */
+        #2563EB 33%,         /* Vibrant Electric Blue */
+        #1D4ED8 44%,         /* Deep Royal Blue across guide cards */
+        #1E40AF 54%,         /* Deep Oceanic Navy */
+        #1E3A8A 63%,         /* Midnight Sapphire across Proof milestone */
+        #2563EB 71%,         /* Lifting back into vibrant cerulean */
+        
+        /* 3. CLOUDY WHITE (Bottom / End: FAQ, CTA & Footer) */
+        #60A5FA 77%,         /* Sky mist atmosphere */
+        #93C5FD 82%,         /* Light cloud haze */
+        #BFDBFE 86.5%,       /* Soft morning cloud tone */
+        #DBEAFE 90.5%,       /* Pale atmospheric mist */
+        #EFF6FF 94%,         /* Puffy cloud white */
+        #F8FAFC 97.5%,       /* Airy cloudy white across Final CTA */
+        #FFFFFF 100%         /* Pure cloudy white at the very end */
+      );
+      background-attachment: scroll;
+      color: var(--color-text-navy);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      width: 100%;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, .font-heading {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .font-mono {
+      font-family: var(--font-mono);
+    }
+
+    /* Layout Helpers */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background-color: rgba(2, 132, 199, 0.42);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 26px;
+      color: var(--color-text-navy);
+      text-decoration: none;
+      letter-spacing: -0.04em;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-logo .logo-x {
+      color: var(--color-accent-magenta);
+    }
+
+    .nav-logo .dot {
+      color: var(--color-accent-magenta);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 18px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pill-ghost {
+      color: var(--color-text-navy);
+      background: transparent;
+      border: 1px solid var(--color-border-card);
+    }
+
+    .pill-ghost:hover {
+      background: var(--color-surface-tint);
+      border-color: var(--color-primary-blue);
+      color: var(--color-primary-blue);
+    }
+
+    .pill-solid {
+      background: var(--color-primary-blue);
+      color: #FFFFFF;
+      border: 1px solid transparent;
+    }
+
+    .pill-solid:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(31, 75, 255, 0.35);
+    }
+
+    .theme-toggle-btn {
+      background: var(--color-surface-tint);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-navy);
+      width: 38px;
+      height: 38px;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--color-accent-magenta);
+      transform: rotate(15deg);
+    }
+
+    /* Hero Section with Sky Gradient Atmosphere */
+    .hero-section {
+      padding: 48px 0 32px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse 130% 90% at 50% -25%, rgba(56, 189, 248, 0.45) 0%, rgba(14, 165, 233, 0.22) 40%, transparent 75%);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 7vw, 58px);
+      max-width: 860px;
+      margin: 0 auto 18px auto;
+      color: #FFFFFF;
+      letter-spacing: -0.04em;
+    }
+
+    .highlighter-pink {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    .highlighter-pink::after {
+      content: "";
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      bottom: 4px;
+      height: 48%;
+      background: linear-gradient(90deg, #E0219A, #FF4CBF);
+      opacity: 0.35;
+      border-radius: 6px;
+      z-index: -1;
+      transform-origin: left center;
+      transform: scaleX(0) rotate(-0.5deg);
+      animation: highlightMarker 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+      box-shadow: 0 0 18px rgba(255, 76, 191, 0.45);
+    }
+
+    html.dark .highlighter-pink::after {
+      background: linear-gradient(90deg, #FF4CBF, #FF80D5);
+      opacity: 0.55;
+      box-shadow: 0 0 24px rgba(255, 76, 191, 0.65);
+    }
+
+    @keyframes highlightMarker {
+      0% {
+        transform: scaleX(0) rotate(-0.5deg);
+      }
+      100% {
+        transform: scaleX(1) rotate(-0.5deg);
+      }
+    }
+
+    .highlight-underline {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .highlight-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 7px;
+      background: var(--color-accent-magenta);
+      opacity: 0.85;
+      border-radius: 4px;
+      z-index: -1;
+      transform: rotate(-1deg);
+    }
+
+    .highlight-blue {
+      color: var(--color-primary-blue);
+    }
+
+    .hero-subtext {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: var(--color-text-muted);
+      max-width: 620px;
+      margin: 0 auto 28px auto;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 9999px;
+      font-size: 15.5px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      min-height: 48px;
+    }
+
+    .btn-primary-white {
+      background: #FFFFFF;
+      color: #060C26;
+      border: 1.5px solid #FFFFFF;
+      font-weight: 800;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-primary-white:hover {
+      background: #F0F4FF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.45);
+      color: #060C26;
+    }
+
+    .btn-magenta {
+      background: var(--color-accent-magenta);
+      color: #FFFFFF;
+      border: 1px solid transparent;
+      box-shadow: 0 8px 22px -4px rgba(224, 33, 154, 0.4);
+    }
+
+    .btn-magenta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -4px rgba(224, 33, 154, 0.55);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-text-navy);
+      border: 1.5px solid var(--color-border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-primary-blue);
+      color: var(--color-primary-blue);
+      background: var(--color-surface-tint);
+      transform: translateY(-2px);
+    }
+
+    html.dark .btn-outline {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    html.dark .btn-outline:hover {
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+    }
+
+    /* Giant Background Lettering */
+    .hero-fan-wrapper {
+      position: relative;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 30px 0 60px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-big-text {
+      position: absolute;
+      top: 6%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: clamp(74px, 22vw, 230px);
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 1;
+      user-select: none;
+      
+      /* Primary color: Solid PURE WHITE (no blue stroke) */
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      -webkit-text-stroke: 0 !important;
+      text-shadow: 
+        0 0 35px rgba(255, 255, 255, 0.4),
+        0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    html.dark .hero-big-text {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      -webkit-text-stroke: 0 !important;
+      text-shadow: 
+        0 0 50px rgba(255, 255, 255, 0.5),
+        0 10px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-big-text .x-magenta {
+      color: #FF4CBF !important;
+      -webkit-text-fill-color: #FF4CBF !important;
+      -webkit-text-stroke: 0 !important;
+      text-shadow: 
+        0 0 45px rgba(255, 76, 191, 0.95),
+        0 0 90px rgba(224, 33, 154, 0.7),
+        0 10px 40px rgba(0, 0, 0, 0.7) !important;
+      display: inline-block;
+    }
+
+    /* 3-Reel Fan Cards */
+    .reels-fan {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 680px;
+      height: clamp(430px, 66vw, 540px);
+    }
+
+    .reel-card {
+      position: absolute;
+      width: clamp(165px, 38vw, 235px);
+      aspect-ratio: 9 / 16;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 3.5px solid #FFFFFF;
+      box-shadow: var(--shadow-fan);
+      background: #000000;
+      opacity: 0;
+      transition: transform 0.75s cubic-bezier(0.34, 1.45, 0.64, 1), 
+                  opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.35s ease;
+      cursor: pointer;
+      will-change: transform, opacity;
+    }
+
+    html.dark .reel-card {
+      border: 3.5px solid rgba(255, 255, 255, 0.88);
+    }
+
+    .reel-card:hover {
+      box-shadow: 0 25px 50px -10px rgba(31, 75, 255, 0.45);
+      z-index: 10 !important;
+    }
+
+    .reel-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+
+    /* Initial state before scroll pop-up (stacked and submerged) */
+    .reel-card.reel-1 {
+      left: calc(50% - clamp(140px, 26vw, 195px));
+      transform: rotate(0deg) translateY(90px) scale(0.85);
+      z-index: 2;
+    }
+
+    .reel-card.reel-2 {
+      left: 50%;
+      transform: translateX(-50%) translateY(115px) scale(0.82);
+      z-index: 4;
+    }
+
+    .reel-card.reel-3 {
+      right: calc(50% - clamp(140px, 26vw, 195px));
+      transform: rotate(0deg) translateY(90px) scale(0.85);
+      z-index: 3;
+    }
+
+    /* Popped-Up State: Springs up into full fan-out on scroll */
+    .reels-fan.popped-up .reel-card.reel-1 {
+      opacity: 1;
+      transform: rotate(-7deg) translateY(48px) scale(1);
+      transition-delay: 0.12s;
+    }
+
+    .reels-fan.popped-up .reel-card.reel-1:hover {
+      transform: rotate(-3deg) translateY(38px) scale(1.04);
+      transition-delay: 0s;
+    }
+
+    .reels-fan.popped-up .reel-card.reel-2 {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-15px) scale(1);
+      transition-delay: 0s;
+    }
+
+    .reels-fan.popped-up .reel-card.reel-2:hover {
+      transform: translateX(-50%) translateY(-22px) scale(1.04);
+      transition-delay: 0s;
+    }
+
+    .reels-fan.popped-up .reel-card.reel-3 {
+      opacity: 1;
+      transform: rotate(7deg) translateY(20px) scale(1);
+      transition-delay: 0.22s;
+    }
+
+    .reels-fan.popped-up .reel-card.reel-3:hover {
+      transform: rotate(3deg) translateY(12px) scale(1.04);
+      transition-delay: 0s;
+    }
+
+    @media (max-width: 480px) {
+      .hero-fan-wrapper {
+        padding: 24px 0 50px 0;
+      }
+      .hero-big-text {
+        top: 4%;
+        transform: translate(-50%, -15%);
+      }
+      .reel-card.reel-1 {
+        left: calc(50% - clamp(118px, 28vw, 138px));
+        transform: rotate(0deg) translateY(80px) scale(0.88);
+      }
+      .reel-card.reel-2 {
+        transform: translateX(-50%) translateY(95px) scale(0.85);
+      }
+      .reel-card.reel-3 {
+        right: calc(50% - clamp(118px, 28vw, 138px));
+        transform: rotate(0deg) translateY(80px) scale(0.88);
+      }
+      .reels-fan.popped-up .reel-card.reel-1 {
+        opacity: 1;
+        transform: rotate(-7deg) translateY(40px) scale(1);
+      }
+      .reels-fan.popped-up .reel-card.reel-1:hover {
+        transform: rotate(-3deg) translateY(32px) scale(1.03);
+      }
+      .reels-fan.popped-up .reel-card.reel-2 {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-10px) scale(1);
+      }
+      .reels-fan.popped-up .reel-card.reel-2:hover {
+        transform: translateX(-50%) translateY(-16px) scale(1.03);
+      }
+      .reels-fan.popped-up .reel-card.reel-3 {
+        opacity: 1;
+        transform: rotate(7deg) translateY(18px) scale(1);
+      }
+      .reels-fan.popped-up .reel-card.reel-3:hover {
+        transform: rotate(3deg) translateY(10px) scale(1.03);
+      }
+    }
+
+    /* Reel Bottom Pill */
+    .reel-pill {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.94);
+      color: #0A1646;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 6;
+    }
+
+    .reel-pill svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--color-primary-blue);
+    }
+
+    /* Tap to Unmute Overlay */
+    .sound-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(10, 22, 70, 0.7);
+      backdrop-filter: blur(4px);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 6;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: background 0.2s ease;
+    }
+
+    .reel-card:hover .sound-badge {
+      background: var(--color-accent-magenta);
+    }
+
+    /* Section Styles */
+    .section-wrap {
+      padding: 70px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-primary-blue);
+      background: var(--color-surface-tint);
+      border: 1px solid var(--color-border);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 5vw, 42px);
+      color: var(--color-text-navy);
+      letter-spacing: -0.035em;
+    }
+
+    /* Guides Cards Grid */
+    .guides-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .guides-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .guide-card {
+      background: var(--color-surface-card);
+      border: 1px solid var(--color-border-card);
+      border-radius: 24px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px -10px rgba(31, 75, 255, 0.18);
+    }
+
+    /* Featured Card with Magenta Border */
+    .guide-card.featured {
+      border: 2px solid var(--color-accent-magenta);
+      background: linear-gradient(180deg, var(--color-surface-card) 0%, var(--color-surface-tint) 100%);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -13px;
+      right: 24px;
+      background: var(--color-accent-magenta);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(224, 33, 154, 0.4);
+    }
+
+    /* 3D Tilted Ebook Cover */
+    .cover-container {
+      perspective: 1000px;
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .cover-img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 14px 28px rgba(10, 22, 70, 0.22);
+      transform: rotateY(-14deg);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .guide-card:hover .cover-img {
+      transform: rotateY(0deg) translateY(-6px);
+      box-shadow: 0 20px 38px rgba(10, 22, 70, 0.3);
+    }
+
+    .guide-card-body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .guide-title {
+      font-size: 21px;
+      margin-bottom: 10px;
+      color: var(--color-text-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .guide-desc {
+      font-size: 14.5px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .guide-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .price-main {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--color-text-navy);
+    }
+
+    .price-usd {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+
+    .guide-meta {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--color-primary-blue);
+      margin-bottom: 18px;
+    }
+
+    .btn-card {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+
+    .btn-card-primary {
+      background: var(--color-primary-blue);
+      color: #FFFFFF;
+    }
+
+    .btn-card-primary:hover {
+      background: #143ACC;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(31, 75, 255, 0.35);
+    }
+
+    .btn-card-magenta {
+      background: var(--color-accent-magenta);
+      color: #FFFFFF;
+    }
+
+    .btn-card-magenta:hover {
+      background: #C21382;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(224, 33, 154, 0.45);
+    }
+
+    /* Dashed Magenta Bonus Strip */
+    .bonus-strip {
+      border: 2px dashed var(--color-accent-magenta);
+      background: var(--color-surface-tint);
+      border-radius: 20px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .bonus-strip {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    .bonus-cover-wrap {
+      perspective: 800px;
+      flex-shrink: 0;
+    }
+
+    .bonus-cover-img {
+      width: 90px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      transform: rotateY(-14deg);
+      transition: transform 0.3s ease;
+    }
+
+    .bonus-strip:hover .bonus-cover-img {
+      transform: rotateY(0deg) scale(1.05);
+    }
+
+    .bonus-content {
+      flex-grow: 1;
+    }
+
+    .bonus-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-accent-magenta);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+
+    .bonus-text {
+      font-size: 14.5px;
+      color: var(--color-text-navy);
+      line-height: 1.5;
+    }
+
+    /* Recommendation Note */
+    .guides-recommendation {
+      background: rgba(31, 75, 255, 0.06);
+      border: 1px solid var(--color-border);
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-size: 14px;
+      color: var(--color-text-navy);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Proof Section */
+    .proof-grid {
+      max-width: 680px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .proof-main-card {
+      background: var(--color-primary-blue);
+      color: #FFFFFF;
+      border-radius: 24px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 45px -10px rgba(31, 75, 255, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proof-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 6vw, 44px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .proof-sub {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      opacity: 0.9;
+      margin-bottom: 22px;
+      letter-spacing: 0.02em;
+    }
+
+    .proof-screenshot-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      background: #060C26;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+      max-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .proof-screenshot-img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .proof-main-card:hover .proof-screenshot-img {
+      transform: scale(1.02);
+    }
+
+    /* Proof Section Wrap */
+    .proof-section {
+      padding: 60px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* FAQ Accordions in Cloudy Mist Transition */
+    .faq-section {
+      position: relative;
+      z-index: 2;
+      padding: 70px 0 35px 0;
+    }
+
+    .faq-section .section-title {
+      color: #0A1646; /* crisp deep navy on cloudy mist */
+    }
+
+    html.dark .faq-section .section-title {
+      color: #0A1646; /* always high contrast against the cloudy white transition */
+    }
+
+    .faq-section .section-badge {
+      background: rgba(31, 75, 255, 0.08);
+      color: #1F4BFF;
+      border: 1px solid rgba(31, 75, 255, 0.22);
+    }
+
+    .faq-container {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(31, 75, 255, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px -6px rgba(31, 75, 255, 0.10), 0 4px 12px rgba(10, 22, 70, 0.04);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-item:hover {
+      border-color: rgba(31, 75, 255, 0.40);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px -6px rgba(31, 75, 255, 0.16);
+    }
+
+    .faq-btn {
+      width: 100%;
+      padding: 22px 26px;
+      text-align: left;
+      background: transparent;
+      border: none;
+      font-family: var(--font-heading);
+      font-size: 17.5px;
+      font-weight: 700;
+      color: #0A1646;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      gap: 16px;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #EFF6FF;
+      color: #1F4BFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+      font-weight: 700;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+      box-shadow: 0 2px 8px rgba(31, 75, 255, 0.12);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      background: #E0219A;
+      color: #FFFFFF;
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      padding: 0 26px;
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-content {
+      padding: 0 26px 24px 26px;
+      max-height: 280px;
+    }
+
+    /* Final CTA in Cloudy White */
+    .cta-section {
+      position: relative;
+      z-index: 2;
+      padding: 30px 0 20px 0;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, #1F4BFF 0%, #8736E0 50%, #E0219A 100%);
+      border-radius: 32px;
+      padding: 60px 28px;
+      text-align: center;
+      color: #FFFFFF;
+      box-shadow: 0 26px 65px -12px rgba(31, 75, 255, 0.40);
+      position: relative;
+      overflow: hidden;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      margin-top: 20px;
+    }
+
+    .cta-card h2 {
+      font-size: clamp(30px, 6vw, 46px);
+      margin-bottom: 24px;
+      letter-spacing: -0.035em;
+      color: #FFFFFF;
+    }
+
+    .btn-white {
+      background: #FFFFFF;
+      color: #0A1646;
+      border: 1.5px solid #FFFFFF;
+      font-weight: 800;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-white:hover {
+      background: #F1F5FF;
+      color: #1F4BFF;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    /* Footer in Cloudy White */
+    .footer {
+      padding: 44px 0 54px 0;
+      text-align: center;
+      border-top: 1px solid rgba(31, 75, 255, 0.14);
+      margin-top: 50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-disclaimer {
+      font-size: 13.5px;
+      color: #64748B;
+      max-width: 600px;
+      margin: 0 auto 12px auto;
+      line-height: 1.55;
+    }
+
+    .footer-copy {
+      font-size: 14px;
+      color: #0A1646;
+      font-weight: 600;
+    }
+
+    /* Atmospheric Cloudy White Glow at the end */
+    .cloud-atmosphere-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 980px;
+      background: 
+        radial-gradient(ellipse 65% 55% at 18% 88%, rgba(255, 255, 255, 0.88) 0%, transparent 68%),
+        radial-gradient(ellipse 75% 50% at 82% 82%, rgba(240, 246, 255, 0.92) 0%, transparent 65%),
+        radial-gradient(ellipse 95% 45% at 50% 98%, rgba(255, 255, 255, 0.98) 0%, transparent 75%);
+      pointer-events: none;
+      z-index: 1;
+    }
+      line-height: 1.5;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--color-text-muted);
+    }
+
+    /* Accessibility: Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .highlighter-pink::after {
+        animation: none !important;
+        transform: none !important;
+      }
+      .highlighter-pink::after {
+        transform: scaleX(1) !important;
+      }
+      .cover-img, .bonus-cover-img {
+        transform: none !important;
+      }
+      .reel-card {
+        opacity: 1 !important;
+        transition: none !important;
+      }
+      .reel-card.reel-1 {
+        transform: rotate(-7deg) translateY(48px) !important;
+      }
+      .reel-card.reel-2 {
+        transform: translateX(-50%) translateY(-15px) !important;
+      }
+      .reel-card.reel-3 {
+        transform: rotate(7deg) translateY(20px) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav-bar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">BluLe<span class="logo-x">x</span><span class="dot">.</span></a>
+      <div class="nav-actions">
+        <a href="#proof" class="pill-link pill-ghost">Proof</a>
+        <a href="#guides" class="pill-link pill-solid">Shop</a>
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme">
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sunIcon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <!-- Mono Label -->
+        <div class="hero-badge font-mono">
+          <span>Clipping guides by Om Dhas</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-title">
+          <span class="highlighter-pink">Learn smarter.</span> <span class="highlight-underline">Create</span> <span class="highlight-blue">better.</span>
+        </h1>
+
+        <!-- Subtext -->
+        <p class="hero-subtext">
+          Simple guides for beginners who want to start earning online with content clipping. Written by someone who is doing it.
+        </p>
+
+        <!-- Buttons -->
+        <div class="hero-buttons">
+          <a href="#guides" class="btn btn-primary-white">Browse the guides</a>
+          <a href="#proof" class="btn btn-outline">See proof</a>
+        </div>
+
+        <!-- 3-Reel Fan with Giant Lettering Behind -->
+        <div class="hero-fan-wrapper">
+          <!-- Giant Background Lettering strictly per spec -->
+          <div class="hero-big-text" aria-hidden="true">BLULE<span class="x-magenta">X</span></div>
+
+          <!-- Reel Cards Fan -->
+          <div class="reels-fan">
+            <!-- Reel 1 (left): LOW, rotated -7deg, pushed down ~50px -->
+            <div class="reel-card reel-1" onclick="toggleReelAudio(this)">
+              <video src="assets/reel1.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              <div class="sound-badge" title="Tap to unmute">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+              </div>
+              <div class="reel-pill">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+                400K views
+              </div>
+            </div>
+
+            <!-- Reel 2 (center): a little UP, on top, no rotation -->
+            <div class="reel-card reel-2" onclick="toggleReelAudio(this)">
+              <video src="assets/reel2.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              <div class="sound-badge" title="Tap to unmute">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+              </div>
+              <div class="reel-pill">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+                500K views
+              </div>
+            </div>
+
+            <!-- Reel 3 (right): rotated +7deg, pushed down ~20px -->
+            <div class="reel-card reel-3" onclick="toggleReelAudio(this)">
+              <video src="assets/reel3.mp4" autoplay loop muted playsinline preload="metadata"></video>
+              <div class="sound-badge" title="Tap to unmute">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+              </div>
+              <div class="reel-pill">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+                450K views
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDES SECTION -->
+    <section id="guides" class="section-wrap">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">The Catalog</span>
+          <h2 class="section-title">Three guides. Zero fluff.</h2>
+        </div>
+
+        <div class="guides-grid">
+          <!-- Guide 1: C2$ Formula (Featured) -->
+          <article class="guide-card featured">
+            <span class="featured-badge">Most complete</span>
+            <div class="cover-container">
+              <img src="assets/ebook1-c2s-formula.jpg" alt="C2$ Formula Ebook Cover" class="cover-img" loading="lazy">
+            </div>
+            <div class="guide-card-body">
+              <h3 class="guide-title">C2$ Formula</h3>
+              <p class="guide-desc">The complete content clipping system. The full method for clipping content and turning it into income, step by step.</p>
+              
+              <div class="guide-price-row">
+                <span class="price-main">₹399</span>
+                <span class="price-usd">/ $14.99</span>
+              </div>
+              <p class="guide-meta">One-time payment · Instant access</p>
+              
+              <a href="https://superprofile.bio/vp/6ada4258e515900007e47dc6" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-magenta">
+                Get it now &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Guide 2: How I Started Clipping on Whop -->
+          <article class="guide-card">
+            <div class="cover-container">
+              <img src="assets/book2_how_i_started_clipping_on_whop.png" alt="How I Started Clipping on Whop Ebook Cover" class="cover-img" loading="lazy">
+            </div>
+            <div class="guide-card-body">
+              <h3 class="guide-title">How I Started Clipping on Whop</h3>
+              <p class="guide-desc">My story and exact steps for going from ₹0 to about $500 in 3 months.</p>
+              
+              <div class="guide-price-row">
+                <span class="price-main">₹199</span>
+                <span class="price-usd">/ $9.99</span>
+              </div>
+              <p class="guide-meta">One-time payment · Instant access</p>
+              
+              <a href="https://superprofile.bio/vp/6ad5e7aec9261600142c2aad" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-primary">
+                Get it now &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Guide 3: Clipping Starter Kit -->
+          <article class="guide-card">
+            <div class="cover-container">
+              <img src="assets/ebook3-starter-kit.jpg" alt="Clipping Starter Kit Ebook Cover" class="cover-img" loading="lazy">
+            </div>
+            <div class="guide-card-body">
+              <h3 class="guide-title">Clipping Starter Kit</h3>
+              <p class="guide-desc">Your first step into content clipping. Don't know where to begin? Start here.</p>
+              
+              <div class="guide-price-row">
+                <span class="price-main">₹99</span>
+                <span class="price-usd">/ $4.99</span>
+              </div>
+              <p class="guide-meta">One-time payment · Instant access</p>
+              
+              <a href="https://superprofile.bio/vp/starterpackclip" target="_blank" rel="noopener noreferrer" class="btn-card btn-card-primary">
+                Get it now &rarr;
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Dashed Magenta Strip for Ebook 4 -->
+        <div class="bonus-strip">
+          <div class="bonus-cover-wrap">
+            <img src="assets/ebook4-quick-start.jpg" alt="Quick Start Pack Ebook Cover" class="bonus-cover-img" loading="lazy">
+          </div>
+          <div class="bonus-content">
+            <span class="bonus-tag">Checkout Bonus Only</span>
+            <p class="bonus-text">
+              <strong>Quick Start Pack ₹49</strong>, bonus add-on at checkout only, not sold separately: simple checklists, beginner editing tips and a 3-day action plan.
+            </p>
+          </div>
+        </div>
+
+        <!-- Recommendation Note -->
+        <div class="guides-recommendation">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; color:var(--color-primary-blue)">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span><strong>New to clipping?</strong> Start with the Whop guide. <strong>Want the full system?</strong> Choose C2$ Formula.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF SECTION -->
+    <section id="proof" class="section-wrap proof-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Real Numbers</span>
+          <h2 class="section-title">Proof of execution</h2>
+        </div>
+
+        <div class="proof-grid">
+          <!-- Big Blue Card -->
+          <div class="proof-main-card">
+            <h3 class="proof-headline">$517.82 lifetime earned on Whop</h3>
+            <p class="proof-sub">Om's personal result, not a guarantee &middot; $43/week avg</p>
+            
+            <div class="proof-screenshot-frame">
+              <img src="assets/earnings-proof.jpg" alt="Whop Lifetime Earnings Growth Chart ($517.82)" class="proof-screenshot-img" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section-wrap faq-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">FAQ</span>
+          <h2 class="section-title">Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>Which guide should I pick first?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              Whop guide if you are completely new, C2$ Formula if you want the full comprehensive method, and the Starter Kit is the cheapest introduction to understand the fundamentals.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>Do I need prior experience or high-end equipment?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              No, absolutely not. All guides are built specifically for beginners from scratch. You can start using free editing tools right on your phone or standard laptop.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>How do I get my ebook after purchasing?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              You get instant digital access right after checkout via SuperProfile. You will immediately be redirected to your download page and sent an email receipt with lifetime access.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>Is this a recurring subscription?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              No. It is a strictly one-time payment. You pay once and own the guide forever, including any future revisions or updates.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>Will I definitely earn $500?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              No promise or guarantee. $517 is my own personal result achieved after 3 months of consistent clipping. What you earn depends entirely on your effort, consistency, and execution.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section-wrap cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Start building something of your own.</h2>
+          <a href="#guides" class="btn btn-white">Browse the guides &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-disclaimer">
+        Results vary. Earnings mentioned are personal experiences, not guarantees.
+      </p>
+      <p class="footer-copy">
+        &copy; 2026 BluLe<span style="color:var(--color-accent-magenta);font-weight:800;">x</span>. Built for beginner creators.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Atmospheric Cloudy White Glow at the end -->
+  <div class="cloud-atmosphere-bottom" aria-hidden="true"></div>
+
+  <script>
+    // Theme Switcher Logic (Light & Dark Mode)
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIcon = document.getElementById('sunIcon');
+
+    function applyTheme(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'block';
+        localStorage.setItem('blulex-theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        moonIcon.style.display = 'block';
+        sunIcon.style.display = 'none';
+        localStorage.setItem('blulex-theme', 'light');
+      }
+    }
+
+    // Initialize Theme: Saved setting > Default to Dark mode
+    const savedTheme = localStorage.getItem('blulex-theme');
+    if (savedTheme) {
+      applyTheme(savedTheme === 'dark');
+    } else {
+      applyTheme(true); // Default to Dark mode where primary color is white
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      applyTheme(!isDark);
+    });
+
+    // Reel Audio Toggle on Tap
+    function toggleReelAudio(card) {
+      const video = card.querySelector('video');
+      const soundBadge = card.querySelector('.sound-badge');
+      if (!video) return;
+
+      if (video.muted) {
+        // Unmute clicked video and mute siblings
+        document.querySelectorAll('.reel-card video').forEach(v => {
+          if (v !== video) {
+            v.muted = true;
+            const badge = v.closest('.reel-card')?.querySelector('.sound-badge');
+            if (badge) badge.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`;
+          }
+        });
+        video.muted = false;
+        video.play().catch(() => {});
+        soundBadge.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`;
+      } else {
+        video.muted = true;
+        soundBadge.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`;
+      }
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(button) {
+      const item = button.closest('.faq-item');
+      const isActive = item.classList.contains('active');
+      
+      // Close all items
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+      
+      // Open clicked item if it wasn't already open
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+
+    // Scroll Pop-up Animation for 3 Hero Clips
+    const reelsFan = document.querySelector('.reels-fan');
+    if (reelsFan) {
+      const handleReelsPopUp = () => {
+        const rect = reelsFan.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        // When cards scroll into the viewport (top within 88% of screen)
+        if (rect.top <= viewportHeight * 0.88 && rect.bottom >= 0) {
+          reelsFan.classList.add('popped-up');
+        } else if (rect.top > viewportHeight * 0.98) {
+          // Reset when scrolled back to the very top so it can pop up again
+          reelsFan.classList.remove('popped-up');
+        }
+      };
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            handleReelsPopUp();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Trigger initial check on page load
+      handleReelsPopUp();
+      setTimeout(handleReelsPopUp, 150);
+    }
+  </script>
+</body>
+</html>
